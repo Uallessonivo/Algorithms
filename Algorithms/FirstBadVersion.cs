@@ -43,23 +43,20 @@ namespace Algorithms
     {
         public static int FirstBadVersion(int n)
         {
-            var low = 0;
-            var high = n;
-
-            while (low <= high)
+            int low = 1, high = n;
+            while (low < high)
             {
-                var mid = low + ( low - high ) / 2;
+                int mid = low + (high - low) / 2;
 
                 if (IsBadVersion(mid))
                 {
-                    high = mid - 1;
+                    high = mid;
                 }
                 else
                 {
                     low = mid + 1;
                 }
             }
-
             return low;
         }
     }

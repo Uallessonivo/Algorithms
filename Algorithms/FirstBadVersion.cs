@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-/*
+﻿/*
  * First Bad Version
  *
 You are a product manager and currently leading a team to develop a new product. 
@@ -41,6 +35,15 @@ namespace Algorithms
 {
     public static class FirstBadVersionSolution
     {
+        public static bool IsBadVersion(int n)
+        {
+            if (n < 3)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public static int FirstBadVersion(int n)
         {
             int low = 1, high = n;

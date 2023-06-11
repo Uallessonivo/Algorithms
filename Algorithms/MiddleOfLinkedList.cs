@@ -1,6 +1,4 @@
-﻿namespace Algorithms;
-
-/*
+﻿/*
  * Middle of the Linked List
  *
  
@@ -21,31 +19,34 @@ Output: [4,5,6]
 Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.
  */
 
-internal class MiddleOfLinkedList
+namespace Algorithms
 {
-    public ListNode MiddleNode(ListNode head)
+    internal class MiddleOfLinkedList
     {
-        var slow = head;
-        var fast = head;
-
-        while (fast?.next != null)
+        public ListNode MiddleNode(ListNode head)
         {
-            slow = slow?.next;
-            fast = fast.next?.next;
+            var slow = head;
+            var fast = head;
+
+            while (fast?.next != null)
+            {
+                slow = slow?.next;
+                fast = fast.next?.next;
+            }
+
+            return slow;
         }
 
-        return slow;
-    }
-
-    public class ListNode
-    {
-        public ListNode next;
-        public int val;
-
-        public ListNode(int val = 0, ListNode next = null)
+        public class ListNode
         {
-            this.val = val;
-            this.next = next;
+            public ListNode next;
+            public int val;
+
+            public ListNode(int val = 0, ListNode next = null)
+            {
+                this.val = val;
+                this.next = next;
+            }
         }
     }
 }

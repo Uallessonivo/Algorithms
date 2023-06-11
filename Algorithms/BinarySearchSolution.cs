@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-/*
+﻿/*
  * Binary Search
  *
 Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. 

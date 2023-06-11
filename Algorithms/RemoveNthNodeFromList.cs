@@ -1,6 +1,4 @@
-﻿namespace Algorithms;
-
-/*
+﻿/*
  * Remove Nth Node From End of List
  *
  
@@ -21,43 +19,46 @@ Input: head = [1,2], n = 1
 Output: [1]
  */
 
-internal class RemoveNthNodeFromList
+namespace Algorithms
 {
-    public ListNode? RemoveNthFromEnd(ListNode head, int n)
+    internal class RemoveNthNodeFromList
     {
-        var dummy = new ListNode(0)
+        public ListNode? RemoveNthFromEnd(ListNode head, int n)
         {
-            next = head
-        };
+            var dummy = new ListNode(0)
+            {
+                next = head
+            };
 
-        var slow = dummy;
-        var fast = dummy;
+            var slow = dummy;
+            var fast = dummy;
 
-        for (var i = 0; i < n + 1; i++)
-        {
-            fast = fast?.next;
+            for (var i = 0; i < n + 1; i++)
+            {
+                fast = fast?.next;
+            }
+
+            while (fast != null)
+            {
+                slow = slow?.next;
+                fast = fast?.next;
+            }
+
+            if (slow != null) slow.next = slow?.next?.next;
+
+            return dummy?.next;
         }
 
-        while (fast != null)
+        public class ListNode
         {
-            slow = slow?.next;
-            fast = fast?.next;
-        }
+            public ListNode? next;
+            public int val;
 
-        if (slow != null) slow.next = slow?.next?.next;
-
-        return dummy?.next;
-    }
-
-    public class ListNode
-    {
-        public ListNode? next;
-        public int val;
-
-        public ListNode(int val = 0, ListNode? next = null)
-        {
-            this.val = val;
-            this.next = next;
+            public ListNode(int val = 0, ListNode? next = null)
+            {
+                this.val = val;
+                this.next = next;
+            }
         }
     }
 }

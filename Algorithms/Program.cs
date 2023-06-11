@@ -1,5 +1,4 @@
-﻿
-using Algorithms;
+﻿using Algorithms;
 
 class Program
 {

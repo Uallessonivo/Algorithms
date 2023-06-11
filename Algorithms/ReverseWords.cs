@@ -1,6 +1,4 @@
-﻿namespace Algorithms;
-
-/*
+﻿/*
  * Reverse Words in a String III
  *
  
@@ -18,29 +16,32 @@ Input: s = "God Ding"
 Output: "doG gniD"
  */
 
-internal class ReverseWordsSolution
+namespace Algorithms
 {
-    public string ReverseWords(string s)
+    internal class ReverseWordsSolution
     {
-        var splitted = s.Split(' ');
-
-        for (int i = 0; i < splitted.Length; i++)
+        public string ReverseWords(string s)
         {
-           var word = splitted[i];
-           var left = 0;
-           var right = word.Length - 1;
-           var wordChars = word.ToCharArray();
+            var splitted = s.Split(' ');
 
-           while (left < right)
-           {
-               (wordChars[left], wordChars[right]) = (wordChars[right], wordChars[left]);
-               left++;
-               right--;
-           }
+            for (int i = 0; i < splitted.Length; i++)
+            {
+                var word = splitted[i];
+                var left = 0;
+                var right = word.Length - 1;
+                var wordChars = word.ToCharArray();
 
-           splitted[i] = new string(wordChars);
+                while (left < right)
+                {
+                    (wordChars[left], wordChars[right]) = (wordChars[right], wordChars[left]);
+                    left++;
+                    right--;
+                }
+
+                splitted[i] = new string(wordChars);
+            }
+
+            return string.Join(" ", splitted);
         }
-
-        return string.Join(" ", splitted);
     }
 }

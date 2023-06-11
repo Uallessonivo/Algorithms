@@ -1,6 +1,4 @@
-﻿namespace Algorithms;
-
-/*
+﻿/*
  * Move Zeroes
  *
  
@@ -20,21 +18,24 @@ Input: nums = [0]
 Output: [0]
  */
 
-internal class MoveZeroesSolution
+namespace Algorithms
 {
-    public int[] MoveZeroes(int[] nums)
+    internal class MoveZeroesSolution
     {
-        var n = nums.Length;
-        var result = new int[n];
-        var nonZeroIndex = 0;
+        public int[] MoveZeroes(int[] nums)
+        {
+            var n = nums.Length;
+            var result = new int[n];
+            var nonZeroIndex = 0;
 
-        for (var i = 0; i < n; i++)
-            if (nums[i] != 0)
-            {
-                if (i != nonZeroIndex) (nums[i], nums[nonZeroIndex]) = (nums[nonZeroIndex], nums[i]);
-                nonZeroIndex++;
-            }
+            for (var i = 0; i < n; i++)
+                if (nums[i] != 0)
+                {
+                    if (i != nonZeroIndex) (nums[i], nums[nonZeroIndex]) = (nums[nonZeroIndex], nums[i]);
+                    nonZeroIndex++;
+                }
 
-        return result;
+            return result;
+        }
     }
 }

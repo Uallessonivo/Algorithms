@@ -1,6 +1,4 @@
-﻿namespace Algorithms;
-
-/*
+﻿/*
  * Reverse String
  *
 
@@ -19,20 +17,23 @@ Input: s = ["H","a","n","n","a","h"]
 Output: ["h","a","n","n","a","H"]
  */
 
-internal class ReverseStringSolution
+namespace Algorithms
 {
-    public static char[] ReverseString(char[] s)
+    internal class ReverseStringSolution
     {
-        var left = 0;
-        var right = s.Length - 1;
-
-        while (left < right)
+        public static char[] ReverseString(char[] s)
         {
-            (s[left], s[right]) = (s[right], s[left]);
-            left++;
-            right--;
-        }
+            var left = 0;
+            var right = s.Length - 1;
 
-        return s;
+            while (left < right)
+            {
+                (s[left], s[right]) = (s[right], s[left]);
+                left++;
+                right--;
+            }
+
+            return s;
+        }
     }
 }

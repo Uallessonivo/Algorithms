@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-/* Rotate Array
+﻿/* Rotate Array
 
 Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
